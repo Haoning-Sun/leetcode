@@ -31,4 +31,23 @@ public int lengthOfLongestSubstring(String s) {
     }
     return ans;
 }
+
+/**
+  双指针法
+ */
+public int lengthOfLongestSubstring(String s) {
+    int n = s.length();
+    Map<Character, Integer> map = new HashMap<>();
+    int max = 0;
+    int start = 0;
+    char[] sc = s.toCharArray();
+    for (int i = 0; i < n; i++) {
+        if (map.contains[sc[i]]) {
+            start = Math.max(map.get(sc[i]), start);
+        }
+        max = Math.max(max, i - start + 1);
+        map.put(sc[i], i + 1);
+    }
+    return max;
+}
 ```
